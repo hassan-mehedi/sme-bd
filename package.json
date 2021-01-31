@@ -1,13 +1,10 @@
 {
-  "homepage": "http://hassan-mehedi.github.io/e-commerce-website",
   "name": "sme-bd",
   "type": "module",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "predeploy":"npm run build",
-    "deploy": "gh-pages -d build",
     "start": "nodemon --watch backend --exec node --experimental-modules backend/server.js"
   },
   "author": "",
