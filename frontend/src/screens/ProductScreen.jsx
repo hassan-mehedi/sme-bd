@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { detailsProducts } from "../actions/productActions";
@@ -9,12 +9,17 @@ import Rating from "../components/rating";
 export default function ProductScreen(props) {
   const dispatch = useDispatch();
   const itemId = props.match.params.id;
+  const [qty, setQty] = useState(1);
   const productList = useSelector((state) => state.productDetails);
   const { product, loading, error } = productList;
 
   useEffect(() => {
     dispatch(detailsProducts(itemId));
   }, [dispatch, itemId]);
+
+  const addToCartHandler = () => {
+    props.history.push(`/cart/${itemId}?qty=${qty}`);
+  };
 
   return (
     <div>
@@ -65,9 +70,37 @@ export default function ProductScreen(props) {
                       </div>
                     </div>
                   </li>
-                  <li>
-                    <button className="primary block">Add to Cart</button>
-                  </li>
+                  {product.countInStock > 0 && (
+                    <>
+                      <li>
+                        <div className="row">
+                          <div>Qty</div>
+                          <div>
+                            <select
+                              value={qty}
+                              onChange={(x) => setQty(x.target.value)}
+                            >
+                              {[...Array(product.countInStock).keys()].map(
+                                (item) => (
+                                  <option key={item} value={item + 1}>
+                                    {item + 1}
+                                  </option>
+                                )
+                              )}
+                            </select>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <button
+                          onClick={addToCartHandler}
+                          className="primary block"
+                        >
+                          Add to Cart
+                        </button>
+                      </li>
+                    </>
+                  )}
                 </ul>
               </div>
             </div>
