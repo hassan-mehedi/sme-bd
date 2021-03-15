@@ -17,7 +17,6 @@ const data = {
   ],
   products: [
     {
-      _id: "1",
       name: "Adidas Shoe",
       category: "Shoe",
       image: "/images/AdidasShoeBlack.jpg",
@@ -29,7 +28,6 @@ const data = {
       description: "High quality shoe with black color",
     },
     {
-      _id: "2",
       name: "Pearl Earlobe",
       category: "Jewellery",
       image: "/images/earlobe.jpg",
@@ -41,7 +39,6 @@ const data = {
       description: "White pearl earlobe, made with high quality pearl",
     },
     {
-      _id: "3",
       name: "Diamond Ring",
       category: "Jewellery",
       image: "/images/ring.jpg",
@@ -53,7 +50,6 @@ const data = {
       description: "Ring with top grade diamond on it",
     },
     {
-      _id: "4",
       name: "Check Shirt",
       category: "Shirt",
       image: "/images/shirtNew.jpg",
@@ -65,7 +61,6 @@ const data = {
       description: "Checkh shirt",
     },
     {
-      _id: "5",
       name: "Mi Smart Band 5",
       category: "Accessory",
       image: "/images/watch.jpg",
@@ -77,7 +72,6 @@ const data = {
       description: "Smart watch with a lot of features",
     },
     {
-      _id: "6",
       name: "Green T-shirt",
       category: "T-shirt",
       image: "/images/t-shirt.jpg",
